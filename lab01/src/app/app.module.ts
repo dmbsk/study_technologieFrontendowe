@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { PolishDatePipe } from './pipes/polish-date.pipe';
 import {FormsModule} from "@angular/forms";
 import { SearchGalleriesPipe } from './pipes/search-galleries.pipe';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PolishDatePipe,
-    SearchGalleriesPipe
+    SearchGalleriesPipe,
+    NavComponent
   ],
   imports: [
     BrowserModule,
