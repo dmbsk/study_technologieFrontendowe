@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&subset=latin-ext');
+* {
+  font-family: 'Amatic SC', cursive;
+}
+
+.search {
+  & input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-transform: capitalize;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.container {
+  margin-top: 20px;
+  & ul {
+    & li{
+      display: inline;
+      font-size: 40px;
+      font-weight: bold;
+      margin: 0px 25px 0px 25px;
+      position: relative;
+
+      &:hover {
+
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: -15%;
+        top: 50%;
+        width: 0%;
+        height: 2px;
+        background-color: black;
+      }
+    }
+  }
+}

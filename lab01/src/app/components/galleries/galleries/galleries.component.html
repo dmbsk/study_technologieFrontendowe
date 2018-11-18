@@ -1,0 +1,20 @@
+<div class="galleryComponent">
+  <div class="container gallery">
+    <div class="row row-align-middle">
+      <div class="grid-5">
+        <app-gallery-search
+          *ngIf="galleries.length"
+          (searchValue)="setSearchValue($event)"
+        >
+        </app-gallery-search>
+      </div>
+    </div>
+    <div class="row row-align-middle" *ngIf="galleries">
+      <app-gallery-item
+        *ngFor="let item of galleries | searchGalleries: searchValue; trackBy:item?.id"
+        [gallery] = "item"
+        class="grid-5 grid-centered">
+      </app-gallery-item>
+    </div>
+  </div>
+</div>
