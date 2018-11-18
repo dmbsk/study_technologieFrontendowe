@@ -8,18 +8,30 @@
       margin: 0px 25px 0px 25px;
       position: relative;
 
-      &:hover {
+      & a{
+        text-decoration: none;
+        color: black;
 
-      }
+        &:hover:after{
+          width: 130%;
+        }
 
-      &:after {
-        content: "";
-        position: absolute;
-        left: -15%;
-        top: 50%;
-        width: 0%;
-        height: 2px;
-        background-color: black;
+        &:after {
+          content: "";
+          position: absolute;
+          left: -15%;
+          top: 50%;
+          width: 0%;
+          height: 2px;
+          background-color: black;
+          transition: all .2s ease-in-out;
+        }
+
+        &.is-active {
+          &:after {
+            width: 130%;
+          }
+        }
       }
     }
   }
