@@ -25,4 +25,8 @@ export class GalleriesComponent implements OnInit {
   setSearchValue($event) {
     this.searchValue = $event
   }
+
+  ngOnInit() {
+
+  }
 }
