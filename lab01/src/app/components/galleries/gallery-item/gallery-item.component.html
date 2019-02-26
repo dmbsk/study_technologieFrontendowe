@@ -1,8 +1,13 @@
-<div>
-  <img src={{gallery.thumbURL}} width="300" class="singleImage">
-  <div class="text">
-    <p>{{gallery.title}}</p>
-    <p>{{gallery.description}}</p>
-    <a>Posted {{gallery.dateCreated | polishDate}}</a>
+<div [style.backgroundColor]=gallery.bgColor>
+  <div [style.backgroundImage]=galleryThumbUrlAsBgImage class="singleImage">
+  <div class="image-info">
+    <div class="image-text" routerLink="/galleries/{{gallery.galleryId}}">
+      <p class="image-description">{{gallery.description}}</p>
+      <p class="image-title">{{gallery.title}}</p>
+    </div>
+    <p class="image-date">{{gallery.dateCreated | specialDate}}</p>
   </div>
+    <div class="button-holder">
+      <div class="deleteButton" (click)="onDelete(gallery.galleryId)"></div>
+    </div>
 </div>

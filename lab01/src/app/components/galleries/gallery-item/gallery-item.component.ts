@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import {IGallery} from "../../../interfaces/IGallery";
 
 @Component({
@@ -9,10 +9,15 @@ import {IGallery} from "../../../interfaces/IGallery";
 export class GalleryItemComponent implements OnInit {
 
   @Input() gallery: IGallery;
+  @Output() deleteGallery: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  public galleryThumbUrlAsBgImage: string;
 
   ngOnInit() {
+    this.galleryThumbUrlAsBgImage = `url("${this.gallery.thumbURL}")`
   }
 
+  onDelete(galleryId: string) {
+    this.deleteGallery.emit(galleryId)
+  }
 }

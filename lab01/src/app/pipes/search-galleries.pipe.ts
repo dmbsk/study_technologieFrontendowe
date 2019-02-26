@@ -11,13 +11,13 @@ export class SearchGalleriesPipe implements PipeTransform {
   transform(value: any, args?: any): any {
     console.log(value);
     console.log(args);
+    this.galleries = value;
     if(args) {
       return this.galleries.filter(item => {
          return item.title.indexOf(args) !== -1 || item.description.indexOf(args) !== -1
       })
     }else {
-      this.galleries = Galleries;
-      return Galleries;
+      return this.galleries;
     }
   }
 }

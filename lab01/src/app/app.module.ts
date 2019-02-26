@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { PolishDatePipe } from './pipes/polish-date.pipe';
 import { FormsModule } from "@angular/forms";
 import { SearchGalleriesPipe } from './pipes/search-galleries.pipe';
@@ -12,6 +13,8 @@ import { GallerySearchComponent } from './components/gallery-search/gallery-sear
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { GalleryComponent } from './components/galleries/gallery/gallery.component';
+import { GalleryFullItemComponent } from './components/galleries/gallery-full-item/gallery-full-item.component';
+import { SpecialDatePipe } from './pipes/special-date.pipe';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,15 @@ import { GalleryComponent } from './components/galleries/gallery/gallery.compone
     GalleryItemComponent,
     GallerySearchComponent,
     DashboardComponent,
-    GalleryComponent
+    GalleryComponent,
+    GalleryFullItemComponent,
+    SpecialDatePipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
