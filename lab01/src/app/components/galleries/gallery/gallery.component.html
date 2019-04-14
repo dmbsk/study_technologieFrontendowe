@@ -1,0 +1,11 @@
+<div>
+  <div class="text">
+    <h1>{{gallery.title + " " + gallery.description}}</h1>
+  </div>
+  <app-gallery-full-item
+    *ngFor="let item of gallery.photos; trackBy:item?.photoId"
+    [gallery] = "item">
+  </app-gallery-full-item>
+  <app-comment-form [galleryId]="galleryId"></app-comment-form>
+</div>
+

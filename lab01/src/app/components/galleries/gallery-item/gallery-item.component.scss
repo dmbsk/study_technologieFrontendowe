@@ -1,0 +1,134 @@
+$medium: 850px;
+$small: 780px;
+$lsmall: 650px;
+$super-small: 580px;
+$xsuper-small: 430px;
+.singleImage {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .image-info {
+    display: flex;
+    flex-direction: column;
+
+    .image-text {
+      display: flex;
+      flex-direction: column;
+      margin-left: 80px;
+      @media screen and (max-width: $small){
+        margin-left: 40px;
+      }
+      @media screen and (max-width: $super-small){
+        margin-left: 10px;
+      }
+      @media screen and (max-width: $xsuper-small) {
+        margin-left: 3px;
+      }
+      p {
+        color: rgb(230, 230, 230);
+      }
+      .image-title {
+        font-size: 40px;
+        text-transform: uppercase;
+        letter-spacing: 15px;
+        margin-top: 10px;
+        white-space: nowrap;
+        @media screen and (max-width: $small){
+          font-size: 30px;
+        }
+        @media screen and (max-width: $xsuper-small){
+          color: white;
+        }
+      }
+      .image-description {
+        font-size: 72px;
+        letter-spacing: 30px;
+        text-transform: uppercase;
+        @media screen and (max-width: $small){
+          letter-spacing: 20px;
+        }
+        @media screen and (max-width: $lsmall){
+          letter-spacing: 15px;
+        }
+        @media screen and (max-width: $small){
+          font-size: 50px;
+        }
+        @media screen and (max-width: $xsuper-small){
+          letter-spacing: 5px;
+          color: white;
+        }
+      }
+    }
+  }
+  .image-date {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+
+    color: white;
+    word-spacing: 20px;
+    letter-spacing: 5px;
+    font-size: 10px;
+
+    @media screen and (max-width: $medium){
+      bottom: 30px;
+    }
+  }
+}
+
+.button-holder {
+  .deleteButton {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    transform: rotateZ(0deg);
+    transition: all .3s;
+    @media screen and (max-width: $medium){
+      bottom: 12px;
+      right: 12px;
+    }
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 5px;
+      background-color: white;
+      transform: rotateZ(45deg);
+      transition: all .3s .1s;
+    }
+    &:hover {
+      background-color: white;
+      transform: rotateZ(45deg);
+    }
+    &:hover:after {
+      background-color: black;
+      transform: rotateZ(135deg);
+    }
+    &:hover:before {
+      content: 'x1';
+      font-size: 14px;
+      text-align: center;
+      background-color: white;
+      transform: rotateZ(-45deg) translateY(8px);
+    }
+    &:after {
+      transform: rotateZ(-45deg);
+    }
+  }
+}
+
+.singleImage {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}

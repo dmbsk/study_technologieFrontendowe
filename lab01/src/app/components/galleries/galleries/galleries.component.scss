@@ -1,0 +1,127 @@
+.galleryComponent {
+  background-color: black;
+  display: flex;
+
+  .galleries {
+    display: flex;
+    overflow-x: hidden;
+  }
+  .single-image {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .api-buttons {
+    position: fixed;
+    display: flex;
+    z-index: 30;
+    left: 10px;
+    bottom: 10px;
+
+    p {
+      color: white;
+      font-size: 10px;
+    }
+
+    .hide-buttons{
+      opacity: 0;
+      transition: all .3s;
+      position: absolute;
+      bottom: 0;
+
+      .export-gallery {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        margin: 25px 0 25px 0;
+        justify-content: center;
+        align-items: center;
+        transform: rotateZ(0deg);
+        background-color: black;
+        border: none;
+        outline: none;
+        transition: all .3s;
+        color: transparent;
+        &:after, &:before {
+          content: '';
+          position: absolute;
+          width: 30px;
+          height: 5px;
+          background-color: white;
+          transform: rotateZ(0deg);
+          transition: all .3s .1s;
+        }
+        &:after {
+          transform: rotateZ(90deg);
+        }
+        &:hover {
+          background-color: white;
+          transform: rotateZ(45deg);
+          color: black;
+        }
+        &:hover:after {
+          background-color: black;
+          transform: rotateZ(-45deg);
+        }
+        &:hover:before {
+          content: '';
+          font-size: 14px;
+          text-align: center;
+          background-color: black;
+          transform: rotateZ(45deg);
+        }
+      }
+      .remove-gallery {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        margin: 25px 0 25px 0;
+        justify-content: center;
+        align-items: center;
+        transform: rotateZ(0deg);
+        background-color: black;
+        border: none;
+        outline: none;
+        transition: all .3s;
+        color: transparent;
+        &:after, &:before {
+          content: '';
+          position: absolute;
+          width: 30px;
+          height: 5px;
+          background-color: white;
+          transform: rotateZ(0deg);
+          transition: all .3s .1s;
+        }
+        &:after {
+          transform: rotateZ(0deg);
+        }
+        &:hover {
+          background-color: white;
+          transform: rotateZ(45deg);
+          color: black;
+        }
+        &:hover:after {
+          background-color: black;
+          transform: rotateZ(-45deg);
+        }
+        &:hover:before {
+          content: 'all';
+          line-height: 25px;
+          font-size: 14px;
+          text-align: center;
+          background-color: black;
+          transform: rotateZ(-45deg);
+        }
+      }
+    }
+      .show-buttons{
+        opacity: 1;
+      }
+  }
+}
+
+.touchScreen {
+  flex-direction: column;
+  overflow: visible;
+}
