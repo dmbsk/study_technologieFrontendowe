@@ -16,6 +16,13 @@ import { GalleryComponent } from './components/galleries/gallery/gallery.compone
 import { GalleryFullItemComponent } from './components/galleries/gallery-full-item/gallery-full-item.component';
 import { SpecialDatePipe } from './pipes/special-date.pipe';
 import { CommentFormComponent } from './components/comments/comment-form/comment-form.component';
+import { CommentBoxComponent } from './components/comments/comment-box/comment-box.component';
+import { GalleryAdderComponent } from './components/galleries/gallery-adder/gallery-adder.component';
+import { NewsComponent } from './components/news/news/news.component';
+import { NewComponent } from './components/news/new/new.component';
+import { NewAdderComponent } from './components/news/new-adder/new-adder.component';
+import { NewFullItemComponent } from './components/news/new-full-item/new-full-item.component';
+import { NewItemComponent } from './components/news/new-item/new-item.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +38,13 @@ import { CommentFormComponent } from './components/comments/comment-form/comment
     GalleryFullItemComponent,
     SpecialDatePipe,
     CommentFormComponent,
+    CommentBoxComponent,
+    GalleryAdderComponent,
+    NewsComponent,
+    NewComponent,
+    NewAdderComponent,
+    NewFullItemComponent,
+    NewItemComponent,
   ],
   imports: [
     BrowserModule,

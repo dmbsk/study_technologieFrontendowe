@@ -1,0 +1,75 @@
+<div class="gallery-adder-form">
+  <form #galleryAdderForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div>
+      <input
+        type="text"
+        placeholder="cool title"
+        id="title"
+        #title="ngModel"
+        [(ngModel)]="gallery.title"
+        name="title"
+        class="input-control"
+        required
+      >
+    </div>
+
+    <div>
+      <input
+        type="text"
+        placeholder="tag1 tag2 tag3"
+        id="tags"
+        #tagsArr="ngModel"
+        [(ngModel)]=gallery.tags
+        name="tags"
+        class="input-control"
+        required
+      >
+    </div>
+
+    <div>
+      <input
+        type="text"
+        placeholder="thumbnail https://unsplash.com/..."
+        id="thumbURL"
+        [(ngModel)]=gallery.thumbURL
+        #thumb="ngModel"
+        name="thumbURL"
+        class="input-control"
+        required
+      >
+    </div>
+
+    <div class="photos-adder-box">
+      <h1>Photos</h1>
+      <button type="button" (click)="addPhoto($event)" class="button-img-add"></button>
+    </div>
+
+
+    <div class="photos-fieldset" *ngFor="let photo of gallery.photos; let i = index">
+    <fieldset>
+      <div class="photos-fieldset-row">
+        <div>
+          <input
+            type="text"
+            placeholder="https://unsplash.com/..."
+            id="imgUrl"
+            #imgUrl="ngModel"
+            [(ngModel)]="photo.imgUrl"
+            name="imgURL"
+            class="input-control"
+            required
+          >
+        </div>
+      </div>
+    </fieldset>
+      <button (click)="removePhoto(i)" class="button-img-remove"></button>
+    </div>
+
+    <button class="add-to-gallery-send"[disabled]="!galleryAdderForm.form.valid">Post your gallery</button>
+  </form>
+  <button
+    class="add-to-gallery-exit"
+    (click)="hideForm()"
+  >
+  </button>
+</div>

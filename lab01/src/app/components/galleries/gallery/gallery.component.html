@@ -1,11 +1,40 @@
-<div>
-  <div class="text">
-    <h1>{{gallery.title + " " + gallery.description}}</h1>
+<div class="gallery">
+  <div class="gallery-photo">
+    <div class="text">
+      <h1>{{gallery.title + " " + gallery.description}}</h1>
+    </div>
+    <app-gallery-full-item
+      *ngFor="let item of gallery.photos; trackBy:item?.photoId"
+      [gallery] = "item">
+    </app-gallery-full-item>
   </div>
-  <app-gallery-full-item
-    *ngFor="let item of gallery.photos; trackBy:item?.photoId"
-    [gallery] = "item">
-  </app-gallery-full-item>
-  <app-comment-form [galleryId]="galleryId"></app-comment-form>
+  <div class="comment-box">
+    <div class="comments-all">
+      <app-comment-box
+        *ngFor="let item of comments; trackBy:item?.commentId"
+        [comment]="item"
+        (commentToDelete)="commentWasDeleted($event)"
+      >
+      </app-comment-box>
+    </div>
+    <app-comment-form
+      [galleryId]="galleryId"
+      (commentToAdd)="commentWasAdded($event)"
+    >
+    </app-comment-form>
+  </div>
+  <button
+    class="edit-gallery"
+    (click)="showEditForm=true"
+    *ngIf="!showEditForm"
+  >
+  </button>
+  <div *ngIf="showEditForm">
+    <app-gallery-adder
+      (saveGallery)="saveGallery($event)"
+      (hide)="showEditForm=false"
+    >
+    </app-gallery-adder>
+  </div>
 </div>
 

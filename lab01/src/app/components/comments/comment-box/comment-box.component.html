@@ -1,0 +1,9 @@
+<div class="comment">
+  <p class="message">{{comment.message}}</p>
+  <p class="name">by {{comment.firstName}} {{comment.lastName}}</p>
+  <p class="date">{{comment.dateCreated | specialDate}}</p>
+  <button
+    class="delete"
+    (click)="deleteComment()"
+  ></button>
+</div>

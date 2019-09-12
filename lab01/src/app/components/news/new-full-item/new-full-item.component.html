@@ -1,0 +1,5 @@
+<div *ngIf="singleNew">
+  <h1>{{ singleNew.title }}</h1>
+  <p>{{singleNew.description || "description is empty :("}}</p>
+  <p>{{singleNew.dateCreated | specialDate}}</p>
+</div>

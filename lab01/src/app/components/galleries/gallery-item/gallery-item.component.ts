@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import {IGallery} from "../../../interfaces/IGallery";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-gallery-item',
@@ -13,8 +14,11 @@ export class GalleryItemComponent implements OnInit {
 
   public galleryThumbUrlAsBgImage: string;
 
+  constructor(private sanitizer: DomSanitizer) {
+  }
+
   ngOnInit() {
-    this.galleryThumbUrlAsBgImage = `url("${this.gallery.thumbURL}")`
+    this.galleryThumbUrlAsBgImage = `url(${(this.gallery.thumbURL)})`
   }
 
   onDelete(galleryId: string) {

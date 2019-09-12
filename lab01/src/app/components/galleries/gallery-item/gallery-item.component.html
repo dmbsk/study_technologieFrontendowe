@@ -1,5 +1,5 @@
 <div [style.backgroundColor]=gallery.bgColor>
-  <div [style.backgroundImage]=galleryThumbUrlAsBgImage class="singleImage">
+  <div [style.backgroundImage]="galleryThumbUrlAsBgImage" class="singleImage">
   <div class="image-info">
     <div class="image-text" routerLink="/galleries/{{gallery.galleryId}}">
       <p class="image-description">{{gallery.description}}</p>

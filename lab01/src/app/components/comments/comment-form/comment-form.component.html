@@ -1,0 +1,61 @@
+<div class="comment-form">
+  <form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)" novalidate>
+    <div>
+      <input
+        type="text"
+        placeholder="Tom"
+        id="name"
+        #firstName="ngModel"
+        [(ngModel)]="comment.firstName"
+        name="firstName"
+        class="input-control"
+        required
+      >
+      <p [hidden]="firstName.valid || firstName.pristine">First Name is required</p>
+    </div>
+
+    <div>
+      <input
+        type="text"
+        placeholder="Face"
+        id="surname"
+        #lastName="ngModel"
+        [(ngModel)]="comment.lastName"
+        name="lastname"
+        class="input-control"
+        required
+      >
+      <p [hidden]="lastName.valid || lastName.pristine">Last Name is required</p>
+    </div>
+
+    <div>
+      <input
+        type="email"
+        placeholder="tomface@gmail.com"
+        id="mail"
+        #mailName="ngModel"
+        [(ngModel)]="comment.email"
+        name="mail"
+        pattern="[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*"
+        required
+      >
+      <p class="form-error" *ngIf="mailName.invalid && !mailName.pristine && !mailName.dirty">Email required!</p>
+      <p class="form-error" *ngIf="mailName.invalid && !mailName.pristine && mailName.dirty">Wrong email pattern!</p>
+    </div>
+
+
+    <div>
+      <textarea
+        id="message"
+        placeholder="Your lovely message"
+        #messageContent="ngModel"
+        name="message"
+        [(ngModel)]="comment.message"
+        required
+      ></textarea>
+      <p [hidden]="messageContent.valid || messageContent.pristine">Message is required</p>
+    </div>
+
+    <button [disabled]="!commentForm.form.valid">Post your comment</button>
+  </form>
+</div>

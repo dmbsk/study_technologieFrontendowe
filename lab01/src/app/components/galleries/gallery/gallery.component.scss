@@ -1,24 +1,77 @@
 $small: 500px;
-.text {
-  font-size: 30px;
-  position: absolute;
+.gallery {
   display: flex;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 25px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  width: 550px;
-  @media screen and (max-width: $small){
-    width: 100%;
-    text-align: center;
+  width: 100%;
+
+  .gallery-photo{
+    position: relative;
+    .text {
+      font-size: 30px;
+      position: absolute;
+      display: flex;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 25px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      width: 550px;
+      @media screen and (max-width: $small){
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        color: black;
+        letter-spacing: 5px;
+      }
+
+    }
   }
-  h1 {
-    color: black;
-    letter-spacing: 5px;
+  .comment-box {
+    margin: 0 35px;
+    padding: 100px 0 20px 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .comments-all {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
   }
 
+  .edit-gallery {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateZ(360deg);
+    transition: all .3s;
+    &:after {
+      content: "edit";
+      position: absolute;
+      transition: all .3s;
+      transform: rotateZ(0deg);
+    }
+    &:hover {
+      transform: rotateZ(405deg);
+      &:after {
+        transform: rotateZ(-45deg);
+      }
+  }
+  }
 }

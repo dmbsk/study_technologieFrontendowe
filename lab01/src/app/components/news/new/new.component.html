@@ -1,0 +1,15 @@
+<div class="new">
+  <app-new-full-item [singleNew]="new"></app-new-full-item>
+  <button
+    class="edit-new"
+    (click)="showEditForm=true"
+    *ngIf="!showEditForm"
+  ></button>
+  <div *ngIf="showEditForm">
+    <app-new-adder
+      (saveNew)="saveNew($event)"
+      (hide)="showEditForm=false"
+    >
+    </app-new-adder>
+  </div>
+</div>

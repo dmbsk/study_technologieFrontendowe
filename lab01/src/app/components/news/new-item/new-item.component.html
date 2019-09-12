@@ -1,0 +1,10 @@
+<div class="singleNew">
+  <div class="new-text" routerLink="/news/{{new.newsId}}">
+    <p class="new-title">{{new.title}}</p>
+    <p class="new-description">{{new.description}}</p>
+  </div>
+  <p class="new-date">{{new.dateCreated | specialDate}}</p>
+</div>
+<div class="button-holder">
+  <div class="deleteButton" (click)="onDelete(new.newsId)"></div>
+</div>

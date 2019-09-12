@@ -1,0 +1,31 @@
+<div class="newsComponent">
+  <div class="api-buttons" (click)="showMoreOptions()">
+    <p>{{apiButtonText}}</p>
+    <div class="hide-buttons">
+      <button
+        class="remove-news"
+        (click)="removeNews()"
+      ></button>
+    </div>
+  </div>
+  <button
+    class="add-to-news"
+    (click)="showNewsForm=true"
+  ></button>
+  <div *ngIf="showNewsForm">
+    <app-new-adder
+      (saveNew)="saveSingleNews($event)"
+      (hide)="hideForm($event)"
+    >
+    </app-new-adder>
+  </div>
+  <div class="news" *ngIf="news.length">
+    <app-new-item
+      *ngFor="let item of (news); trackBy:item?.newsId"
+      [new]="item"
+      (deleteNew)="removeSingleN($event)"
+      class="single-new">
+    </app-new-item>
+  </div>
+</div>
+

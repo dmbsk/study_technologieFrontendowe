@@ -7,6 +7,9 @@ $xsuper-small: 430px;
   display: flex;
   align-items: center;
   position: relative;
+  clip-path: polygon(0% 0%);
+  animation: showOnLoad 3s 0.2s forwards;
+  perspective: 1000px;
 
   .image-info {
     display: flex;
@@ -131,4 +134,20 @@ $xsuper-small: 430px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
+}
+
+@keyframes showOnLoad {
+  0% {
+    clip-path: polygon(0 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 100% 25%, 100% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 0 50%);
+    transform: translateX(180deg);
+    opacity: 0;
+  }
+  50% {
+    clip-path: polygon(0 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 100% 25%, 100% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 0 50%);
+    transform: translateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    clip-path: polygon(0 25%, 0 0, 35% 0%, 65% 0%, 100% 0, 100% 25%, 100% 50%, 100% 100%, 65% 100%, 35% 100%, 0 100%, 0 50%);
+  }
 }
