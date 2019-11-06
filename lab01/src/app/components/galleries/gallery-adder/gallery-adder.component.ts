@@ -40,8 +40,8 @@ export class GalleryAdderComponent implements OnInit {
   };
 
   onSubmit = () => {
-    this.saveGallery.emit(this.gallery)
-  };
+    this.saveGallery.emit(this.gallery);
+  }
 
   setEmptyGallery() {
     return {

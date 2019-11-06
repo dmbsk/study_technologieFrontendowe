@@ -1,0 +1,41 @@
+<div class="galleryComponent">
+  <div class="api-buttons" (click)="showMoreOptions()">
+    <p>{{apiButtonText}}</p>
+    <div class="hide-buttons">
+      <button
+        class="export-gallery"
+        (click)="exportGalleries()"
+      ></button>
+      <button
+        class="remove-gallery"
+        (click)="removeGalleries()"
+      ></button>
+    </div>
+  </div>
+  <button
+    class="add-to-gallery"
+    (click)="showGalleryForm=true"
+  ></button>
+  <div *ngIf="showGalleryForm">
+    <app-gallery-adder
+      (saveGallery)="saveGallery($event)"
+      (hide)="hideForm($event)"
+    >
+    </app-gallery-adder>
+  </div>
+  <app-gallery-search
+    *ngIf="galleries.length && !showGalleryForm"
+    (searchValue)="setSearchValue($event)"
+  >
+  </app-gallery-search>
+  <div class="galleries" *ngIf="galleries.length" (mousewheel)="scrollHandler($event)"
+       (touchstart)="touchHandler($event)">
+    <app-gallery-item
+      *ngFor="let item of (galleries | searchGalleries: searchValue) | slice:0:currentAmountOfImages; trackBy:item?.id"
+      [gallery]="item"
+      (deleteGallery)="removeGallery($event)"
+      class="single-image">
+    </app-gallery-item>
+  </div>
+</div>
+

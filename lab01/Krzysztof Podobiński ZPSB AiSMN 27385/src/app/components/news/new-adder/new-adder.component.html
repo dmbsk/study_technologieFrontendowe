@@ -1,0 +1,50 @@
+<div class="new-adder-form">
+  <form #newAdderForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div>
+      <input
+        type="text"
+        placeholder="cool title"
+        id="title"
+        #title="ngModel"
+        [(ngModel)]="new.title"
+        name="title"
+        class="input-control"
+        required
+      >
+    </div>
+
+    <div>
+        <textarea
+          type="text"
+          placeholder="your super cool description"
+          id="description"
+          #description="ngModel"
+          [(ngModel)]=new.description
+          name="description"
+          class="input-control"
+          required
+        ></textarea>
+      </div>
+
+    <div>
+      <input
+        type="text"
+        placeholder="tag1 tag2 tag3"
+        id="tags"
+        #tagsArr="ngModel"
+        [(ngModel)]=new.tags
+        name="tags"
+        class="input-control"
+        required
+      >
+    </div>
+
+
+    <button class="add-to-new-send"[disabled]="!newAdderForm.form.valid">Post your new</button>
+  </form>
+  <button
+    class="add-to-new-exit"
+    (click)="hideForm()"
+  >
+  </button>
+</div>

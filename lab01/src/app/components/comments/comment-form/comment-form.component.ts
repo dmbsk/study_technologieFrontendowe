@@ -15,7 +15,7 @@ export class CommentFormComponent implements OnInit {
   public comment: object;
 
   constructor(private http: HttpClient) {
-    console.log(this.galleryId)
+    console.log(this.galleryId);
   }
 
   ngOnInit() {

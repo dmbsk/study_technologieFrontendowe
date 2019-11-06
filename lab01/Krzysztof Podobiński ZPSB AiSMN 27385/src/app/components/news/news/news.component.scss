@@ -1,0 +1,187 @@
+.newsComponent {
+  background-color: black;
+  display: flex;
+  height: 100%;
+
+  .news {
+    display: flex;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    flex-wrap: wrap;
+    margin-top: 100px;
+  }
+  .single-image {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .api-buttons {
+    position: fixed;
+    display: flex;
+    z-index: 30;
+    left: 10px;
+    bottom: 10px;
+
+    p {
+      color: white;
+      font-size: 10px;
+    }
+
+    .hide-buttons{
+      opacity: 0;
+      transition: all .3s;
+      position: absolute;
+      bottom: 0;
+
+      .export-news {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        margin: 25px 0 25px 0;
+        justify-content: center;
+        align-items: center;
+        transform: rotateZ(0deg);
+        background-color: black;
+        border: none;
+        outline: none;
+        transition: all .3s;
+        color: transparent;
+        &:after, &:before {
+          content: '';
+          position: absolute;
+          width: 30px;
+          height: 5px;
+          background-color: white;
+          transform: rotateZ(0deg);
+          transition: all .3s .1s;
+        }
+        &:after {
+          transform: rotateZ(90deg);
+        }
+        &:hover {
+          background-color: white;
+          transform: rotateZ(45deg);
+          color: black;
+        }
+        &:hover:after {
+          background-color: black;
+          transform: rotateZ(-45deg);
+        }
+        &:hover:before {
+          content: '';
+          font-size: 14px;
+          text-align: center;
+          background-color: black;
+          transform: rotateZ(45deg);
+        }
+      }
+      .remove-news {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        margin: 25px 0 25px 0;
+        justify-content: center;
+        align-items: center;
+        transform: rotateZ(0deg);
+        background-color: black;
+        border: none;
+        outline: none;
+        transition: all .3s;
+        color: transparent;
+        &:after, &:before {
+          content: '';
+          position: absolute;
+          width: 30px;
+          height: 5px;
+          background-color: white;
+          transform: rotateZ(0deg);
+          transition: all .3s .1s;
+        }
+        &:after {
+          transform: rotateZ(0deg);
+        }
+        &:hover {
+          background-color: white;
+          transform: rotateZ(45deg);
+          color: black;
+        }
+        &:hover:after {
+          background-color: black;
+          transform: rotateZ(-45deg);
+        }
+        &:hover:before {
+          content: 'all';
+          line-height: 25px;
+          font-size: 14px;
+          text-align: center;
+          background-color: black;
+          transform: rotateZ(-45deg);
+        }
+      }
+    }
+    .show-buttons{
+      opacity: 1;
+    }
+  }
+  .add-to-news {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    margin: 25px 0 25px 0;
+    justify-content: center;
+    align-items: center;
+    transform: rotateZ(0deg);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: all .3s;
+    color: transparent;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 5px;
+      background-color: white;
+      transform: rotateZ(0deg);
+      transition: all .3s .1s;
+    }
+    &:after {
+      transform: rotateZ(90deg);
+    }
+    &:hover {
+      background-color: white;
+      transform: rotateZ(45deg);
+      color: black;
+    }
+    &:hover:after {
+      background-color: transparent;
+      transform: translate(14px, -14px) rotateZ(-135deg);
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid black;
+    }
+    &:hover:before {
+      content: 'add';
+      line-height: 25px;
+      font-size: 14px;
+      text-align: center;
+      background-color: black;
+      transform: rotateZ(-45deg);
+    }
+  }
+}
+
+.touchScreen {
+  flex-direction: column;
+  overflow: visible;
+}

@@ -1,0 +1,79 @@
+.comment {
+  min-width: 200px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 20px;
+  p {
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 5px;
+  }
+  p.name {
+    margin: 20px 10px 2px 0;
+    font-size: 12px;
+    text-align: right;
+  }
+  p.message{
+    text-align: center;
+    margin: 40px 10px 15px 10px;
+    letter-spacing: 4px;
+  }
+  p.date {
+    font-size: 10px;
+    font-weight: lighter;
+    text-align: right;
+    margin: 0 10px 10px 0;
+  }
+  button.delete {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    justify-content: center;
+    align-items: center;
+    transform: rotateZ(0deg);
+    background-color: white;
+    border: none;
+    outline: none;
+    transition: all .3s;
+    color: transparent;
+    border: 1px solid transparent;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 2px;
+      background-color: black;
+      transform: rotateZ(0deg);
+      transition: all .3s .1s;
+    }
+    &:after {
+      transform: rotateZ(0deg);
+    }
+    &:hover {
+      background-color: black;
+      transform: rotateZ(45deg);
+      border: 1px solid white;
+      color: white;
+    }
+    &:hover:after {
+      background-color: white;
+      transform: rotateZ(-45deg);
+    }
+    &:hover:before {
+      content: '';
+      line-height: 25px;
+      font-size: 6px;
+      text-align: center;
+      background-color: white;
+      transform: rotateZ(-45deg);
+    }
+  }
+}

@@ -18,7 +18,7 @@ export class GalleryComponent implements OnInit {
       console.log('response', response);
       this.gallery = response;
     });
-
+    
     this.commentLinks.post = `http://project.usagi.pl/comment/byGallery/${this.galleryId}`;
   }
 

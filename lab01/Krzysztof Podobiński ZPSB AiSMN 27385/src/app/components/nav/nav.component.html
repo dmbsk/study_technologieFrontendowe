@@ -1,0 +1,26 @@
+<div class="navbar">
+  <div class="logo">
+  <p class="logo-jap">ドンブスク</p>
+  <p class="logo-org">DMBSK</p>
+  </div>
+  <ul class="navbar-ul">
+    <li><a routerLink="/dashboard" routerLinkActive="is-active">HOME</a></li>
+    <li><a routerLink="/news" routerLinkActive="is-active">NEWS</a></li>
+    <li><a routerLink="/galleries" routerLinkActive="is-active">GALLERIES</a></li>
+    <li><a (click)="openContact()" routerLinkActive="is-active">CONTACT</a></li>
+  </ul>
+  <div class="contact">
+    <div (click)="closeContact()" class="contact-close"></div>
+    <ul class="creator-info">
+      <li>Krzysztof Podobiński</li>
+      <li>ZPSB AiSMN</li>
+      <li>Wojska Polskiego 00</li>
+      <li>Poland, Szczecin</li>
+    </ul>
+    <ul class="creator-address">
+      <li>kpodobinski00@gmail.com</li>
+      <li>+48 500 500 500</li>
+      <li></li>
+    </ul>
+  </div>
+</div>

@@ -106,7 +106,6 @@ export class NewsComponent implements OnInit, AfterViewInit {
   }
 
   saveSingleNews = event => {
-    debugger;
     event.dateCreated = new Date();
     this.http.post('http://project.usagi.pl/news', event, this.httpOptions).toPromise().then( (response: INews) => {
       console.log(response);
